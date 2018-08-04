@@ -11,39 +11,39 @@
     "start": "ember server",
     "test": "ember try:testall"
   },
-  "repository": "https://github.com/Glavin001/ember-c3",
+  "repository": "https://github.com/alyne/ember-c3",
   "engines": {
     "node": ">= 0.10.0"
   },
   "author": {
-    "name": "Glavin Wiechert",
-    "email": "glavin.wiechert@gmail.com",
-    "url": "https://github.com/Glavin001"
+    "name": "Manuel Reil",
+    "email": "manuel.reil@alyne.com",
+    "url": "https://github.com/alyne"
   },
   "license": "MIT",
   "devDependencies": {
-    "broccoli-asset-rev": "^2.2.0",
-    "ember-c3-shim": "0.0.6",
-    "ember-cli": "1.13.13",
-    "ember-cli-app-version": "^1.0.0",
-    "ember-cli-content-security-policy": "0.4.0",
-    "ember-cli-dependency-checker": "^1.1.0",
-    "ember-cli-github-pages": "0.0.6",
-    "ember-cli-htmlbars": "^1.0.1",
-    "ember-cli-htmlbars-inline-precompile": "^0.3.1",
-    "ember-cli-ic-ajax": "0.2.4",
-    "ember-cli-inject-live-reload": "^1.3.1",
+    "broccoli-asset-rev": "2.5.0",
+    "ember-browserify": "1.2.0",
+    "ember-cli": "2.18.0",
+    "ember-cli-app-version": "3.0.0",
+    "ember-cli-content-security-policy": "0.6.1",
+    "ember-cli-dependency-checker": "2.0.1",
+    "ember-cli-htmlbars": "2.0.2",
+    "ember-cli-htmlbars-inline-precompile": "1.0.1",
+    "ember-cli-inject-live-reload": "1.6.1",
     "ember-cli-qunit": "^1.0.4",
     "ember-cli-release": "0.2.8",
-    "ember-cli-sri": "^1.2.0",
-    "ember-cli-uglify": "^1.2.0",
-    "ember-d3": "0.2.0",
-    "ember-data": "1.13.15",
+    "ember-cli-shims": "1.2.0",
+    "ember-cli-sri": "2.1.1",
+    "ember-cli-uglify": "^2.0.0",
+    "ember-data": "2.18.0",
     "ember-disable-prototype-extensions": "^1.0.0",
-    "ember-disable-proxy-controllers": "^1.0.1",
-    "ember-export-application-global": "^1.0.4",
-    "ember-jsoneditor": "^0.1.2",
-    "ember-try": "~0.0.8"
+    "ember-disable-proxy-controllers": "1.0.1",
+    "ember-export-application-global": "2.0.0",
+    "ember-source": "2.18.0",
+    "ember-try": "~0.0.8",
+    "ember-resolver": "4.1.0",
+    "loader.js": "4.5.1"
   },
   "keywords": [
     "ember-addon",
@@ -55,7 +55,8 @@
     "graph"
   ],
   "dependencies": {
-    "ember-cli-babel": "^5.1.5"
+    "c3": "^0.6.6",
+    "ember-cli-babel": "6.7.1"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"

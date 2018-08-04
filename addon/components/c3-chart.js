@@ -1,9 +1,8 @@
-import Component from 'ember-component';
-import get from 'ember-metal/get';
-import set from 'ember-metal/set';
-import { getProperties } from 'ember-metal/get';
-import { debounce, later, scheduleOnce } from 'ember-runloop';
-import c3 from 'c3';
+import Component from '@ember/component';
+import { get, getProperties, set } from '@ember/object';
+import { debounce, later, scheduleOnce } from '@ember/runloop';
+
+import c3 from 'npm:c3';
 
 export default Component.extend({
   tagName: 'div',
@@ -15,35 +14,52 @@ export default Component.extend({
 
     // if data should not be appended
     // e.g. when using a pie or donut chart
-    if ( get(this, 'unloadDataBeforeChange') ) {
+    if (get(this, 'unloadDataBeforeChange')) {
       chart.unload();
       // default animation is 350ms
       // t/f data must by loaded after unload animation (400)
       // or chart will not properly render
-      later(this, function() {
-        chart.load(
-          // data, axis, color are only mutable elements
-          get(this, 'data'),
-          get(this, 'axis'),
-          get(this, 'color')
-        );
-      }, 400);
-    } else {
-      chart.load(
-        get(this, 'data'),
-        get(this, 'axis'),
-        get(this, 'color')
+      later(
+        this,
+        function() {
+          chart.load(
+            // data, axis, color are only mutable elements
+            get(this, 'data'),
+            get(this, 'axis'),
+            get(this, 'color')
+          );
+        },
+        400
       );
+    } else {
+      chart.load(get(this, 'data'), get(this, 'axis'), get(this, 'color'));
     }
   },
 
   // triggered when component added by didInsertElement
   _setupc3() {
     // get all base c3 properties
-    const chartConfig = getProperties(this,
-      ['data','axis','regions','bar','pie','donut','gauge',
-      'grid','legend','tooltip','subchart','zoom','point',
-      'line','area','size','padding','color','transition']);
+    const chartConfig = getProperties(this, [
+      'data',
+      'axis',
+      'regions',
+      'bar',
+      'pie',
+      'donut',
+      'gauge',
+      'grid',
+      'legend',
+      'tooltip',
+      'subchart',
+      'zoom',
+      'point',
+      'line',
+      'area',
+      'size',
+      'padding',
+      'color',
+      'transition'
+    ]);
 
     // bind c3 chart to component's DOM element
     chartConfig.bindto = get(this, 'element');
@@ -82,7 +98,7 @@ export default Component.extend({
     // state readiness
     try {
       scheduleOnce('afterRender', this, this._setupc3);
-    } catch(err) {
+    } catch (err) {
       console.log(err);
     }
   },
