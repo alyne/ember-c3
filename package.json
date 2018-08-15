@@ -55,7 +55,8 @@
     "graph"
   ],
   "dependencies": {
-    "c3": "^0.6.6",
+    "c3": "~0.4.10",
+    "d3": "^3.5.17",
     "ember-cli-babel": "6.7.1"
   },
   "ember-addon": {
