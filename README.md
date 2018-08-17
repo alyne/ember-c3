@@ -80,7 +80,6 @@ See http://c3js.org/examples.html for examples of how to use C3.
 
 * `git clone` this repository
 * `npm install`
-* `bower install`
 * `ember server`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
