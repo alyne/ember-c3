@@ -57,7 +57,7 @@
   "dependencies": {
     "c3": "~0.4.10",
     "d3": "^3.5.17",
-    "ember-cli-babel": "6.7.1"
+    "ember-cli-babel": "6.18.0"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
